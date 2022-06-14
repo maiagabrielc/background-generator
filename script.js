@@ -10,12 +10,23 @@ function setGradient() {
   css.textContent = `${body.style.background};`;
 }
 
+function rgb() {
+  return Math.floor(Math.random() * 255);
+}
+
 function randomColor() {
-  const red = Math.floor(Math.random() * 255);
-  const blue = Math.floor(Math.random() * 255);
-  const green = Math.floor(Math.random() * 255);
+  const firstColor = {
+    red: rgb(),
+    green: rgb(),
+    blue: rgb(),
+  };
+  const secondColor = {
+    red: rgb(),
+    green: rgb(),
+    blue: rgb(),
+  };
   body.style.background = `linear-gradient(to right,
-    rgb(${red}, ${green}, ${blue}), rgb(${red}, ${green}, ${blue}))`;
+    rgb(${firstColor.red}, ${firstColor.green}, ${firstColor.blue}), rgb(${secondColor.red}, ${secondColor.green}, ${secondColor.blue}))`;
   css.textContent = `${body.style.background};`;
 }
 
